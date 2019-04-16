@@ -1,0 +1,25 @@
+
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Lab Results</ion-title>
+    </ion-navbar>
+
+  </ion-header>
+
+
+  <ion-content class="page_bg" padding>
+
+    <ion-row *ngFor="let not of (results | async)?.slice().reverse()">
+        <ion-col col-12>
+          <ion-card padding>
+            <p text-center> {{ not.created_at | date: 'dd/MM/yyyy hh:mm:ss' }}</p>
+            <h3>Laboratory Test: <strong>{{ not.lab_type }}</strong></h3>
+            <h4>Booked Date: <strong>{{ not.book_date }}</strong></h4>
+            <h4>Booked Session: <ion-badge color="warning"><strong>{{ not.book_session }}</strong></ion-badge></h4>
+            <p>Lab Results: <br/> <strong>{{ not.lab_results }}</strong></p>
+          </ion-card>
+        </ion-col>
+    </ion-row>
+
+  </ion-content>

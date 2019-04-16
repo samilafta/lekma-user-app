@@ -1,0 +1,78 @@
+
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+<ion-content padding>
+
+  <div id="logo" padding text-center>
+    <img src="./assets/imgs/logo.png">
+  </div>
+
+  <div padding>
+    <ion-segment [(ngModel)]="opt" color="light">
+      <ion-segment-button value="signin">
+        Sign In
+      </ion-segment-button>
+      <ion-segment-button value="signup">
+        Sign Up
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="opt">
+    <form *ngSwitchCase="'signin'">
+      <ion-label>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="userData.email" name="email"></ion-input>
+
+      <ion-label>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="userData.password" name="password"></ion-input>
+
+      <div padding text-center>
+        <button ion-button round color="light" (click)="signin()" icon-right>
+            <ion-icon name="log-in"></ion-icon>
+        </button>
+      </div>
+
+    </form>
+
+    <form *ngSwitchCase="'signup'">
+
+      <ion-label float>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="regData.first_name" name="first_name"></ion-input>
+
+      <ion-label float>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="regData.last_name" name="last_name"></ion-input>
+
+      <ion-label float>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="regData.email" name="email"></ion-input>
+
+      <ion-label float>Phone Number</ion-label>
+      <ion-input type="text" [(ngModel)]="regData.phone" name="phone"></ion-input>
+
+      <!-- <ion-label float>Sex</ion-label>
+      <ion-select [(ngModel)]="regData.sex" name="sex">
+        <ion-option value="Male">Male</ion-option>
+        <ion-option value="Female">Female</ion-option>
+      </ion-select> -->
+
+      <!-- <ion-label float>Date of Birth</ion-label>
+      <ion-datetime [(ngModel)]="regData.dob" name="dob" display-format="MMM DD, YYYY"></ion-datetime> -->
+
+      <ion-label float>Password</ion-label>
+      <ion-input [(ngModel)]="regData.password" type="password" name="password"></ion-input>
+
+      <div padding text-center>
+        <button ion-button round color="light" (click)="register()" icon-right>
+          SIGNUP<ion-icon name="person-add"></ion-icon>
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</ion-content>

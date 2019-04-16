@@ -1,0 +1,44 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Booking</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="page_bg" padding>
+
+  <!-- <form> -->
+
+    <ion-row>
+      <ion-col col-12>
+          <ion-label>Date</ion-label>
+          <ion-datetime [(ngModel)]="bookData.book_date" name="book_date" display-format="MMM DD, YYYY"></ion-datetime>
+
+      </ion-col>
+      <ion-col col-12>
+          <ion-label>Session</ion-label>
+          <ion-select [(ngModel)]="bookData.book_session" name="book_session">
+            <ion-option value="morning">Morning</ion-option>
+            <ion-option value="afternoon">Afternoon</ion-option>
+            <ion-option value="evening">Evening</ion-option>
+          </ion-select>
+
+      </ion-col>
+    </ion-row>
+
+
+    <ion-label>Laboratory Type</ion-label>
+    <ion-input type="text" [(ngModel)]="bookData.lab_type" name="lab_type"></ion-input>
+
+    <div padding text-center>
+      <button ion-button round color="light" (click)="submitBooking(userInfo.first_name, userInfo.last_name, userInfo.phone)" icon-right>
+        Submit
+      </button>
+    </div>
+
+  <!-- </form> -->
+
+</ion-content>

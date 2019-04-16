@@ -1,14 +1,55 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title text-center>
+      HOME
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="page_bg" padding>
+
+  <section class="profile" text-center margin-bottom>
+    <ion-icon name="person"></ion-icon>
+    <h1 style="font-size:1.4em" no-margin>Welcome, <br>
+      {{userInfo.first_name}} {{ userInfo.last_name }}
+    </h1>
+  </section>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding color="danger" (click)="openBooking()">
+            <ion-icon name="bookmarks"></ion-icon>
+          <h2>Booking</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card text-center padding color="danger" (click)="openNotifications()">
+            <ion-icon name="notifications"></ion-icon>
+          <h2>Notifications</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding color="danger" (click)="openResults()">
+            <ion-icon name="paper"></ion-icon>
+          <h2>Results</h2>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-card text-center padding color="danger" (click)="logout()">
+            <ion-icon name="log-out"></ion-icon>
+          <h2>Logout</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <!-- style="background-color: blueviolet;" -->
 </ion-content>
+
+<!-- npm install rxjs@6.0.0 --save -->
